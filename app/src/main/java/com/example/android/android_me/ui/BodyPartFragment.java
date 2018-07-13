@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.android.android_me.ui;
 
 import android.os.Bundle;
@@ -99,3 +100,47 @@ public class BodyPartFragment extends Fragment {
         currentState.putInt(LIST_INDEX, mListIndex);
     }
 }
+||||||| (empty tree)
+=======
+package com.example.android.android_me.ui;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.example.android.android_me.R;
+import com.example.android.android_me.data.AndroidImageAssets;
+
+public class BodyPartFragment extends Fragment {
+
+
+    //Mandatory constructor for instantiating the fragment
+    public BodyPartFragment(){
+
+    }
+
+    /**
+     *Inflates and populates the fragment layout
+     **/
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+       //Inflate the fragment layout
+       View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
+
+        //Get a reference to the image view in the fragment layout
+        ImageView imageView = (ImageView) rootView.findViewById(R.id.body_parts_image_view);
+
+        //Set the image resource to display
+        imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
+
+        //Return the root view
+        return rootView;
+
+    }
+}
+>>>>>>> 6ed79b6... feat: Create fragment

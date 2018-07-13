@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
@@ -7,3 +8,15 @@
     </modules>
   </component>
 </project>
+||||||| (empty tree)
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android_Me-TFragments.01-Exercise-CreateBodyPartFragment.iml" filepath="$PROJECT_DIR$/Android_Me-TFragments.01-Exercise-CreateBodyPartFragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
+>>>>>>> 6ed79b6... feat: Create fragment
