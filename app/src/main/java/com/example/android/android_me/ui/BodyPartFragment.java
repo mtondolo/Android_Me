@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2017 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*  	http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.android.android_me.ui;
 
@@ -38,8 +38,9 @@ public class BodyPartFragment extends Fragment {
     // DONE (1) Create a setter method and class variable to set and store of a list of image resources
 
     // DONE (2) Create another setter method and variable to track and set the index of the list item to display
-        // ex. index = 0 is the first image id in the given list , index 1 is the second, and so on
+    // ex. index = 0 is the first image id in the given list , index 1 is the second, and so on
 
+    // Variables to store a list of image resources and the index of the image that this fragment displays
     private List<Integer> mImageIds;
     private int mListIndex;
 
@@ -66,8 +67,7 @@ public class BodyPartFragment extends Fragment {
 
         // DONE (3) If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
-
-        if (mImageIds != null){
+        if (mImageIds != null) {
             //Set the image resource to the list item at the stored index
             imageView.setImageResource(mImageIds.get(mListIndex));
         } else {
@@ -80,11 +80,11 @@ public class BodyPartFragment extends Fragment {
 
     //Setter images for keeping track of the list of images this fragment can display
     //and which image in the list is currently being displayed
-    public void setImageIds(List<Integer> imageIds){
+    public void setImageIds(List<Integer> imageIds) {
         mImageIds = imageIds;
     }
 
-    public void setListIndex(int listIndex){
+    public void setListIndex(int listIndex) {
         mListIndex = listIndex;
     }
 
