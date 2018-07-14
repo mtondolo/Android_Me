@@ -10,11 +10,14 @@ import android.widget.ImageView;
 
 import com.example.android.android_me.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
-    // TODO (3) Create final Strings to store state information about the list of images and list index
+    // DONE (3) Create final Strings to store state information about the list of images and list index
+    public static final String IMAGE_ID_LIST = "image_ids";
+    public static final String LIST_INDEX = "list_index";
 
     // Tag for logging
     private static final String TAG = "BodyPartFragment";
@@ -35,6 +38,12 @@ public class BodyPartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //Load the saved state (the list of images and list index) if there is one
+        if (savedInstanceState != null) {
+            mImageIds = savedInstanceState.getIntegerArrayList(IMAGE_ID_LIST);
+            mListIndex = savedInstanceState.getInt(LIST_INDEX);
+        }
+
         // Inflate the Android-Me fragment layout
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
 
@@ -43,7 +52,7 @@ public class BodyPartFragment extends Fragment {
 
         // If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
-        if(mImageIds != null){
+        if (mImageIds != null) {
             // Set the image resource to the list item at the stored index
             imageView.setImageResource(mImageIds.get(mListIndex));
 
@@ -52,9 +61,9 @@ public class BodyPartFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     //Increment position as long as the index remains <= the size of the image ids list
-                    if(mListIndex < mImageIds.size()-1){
+                    if (mListIndex < mImageIds.size() - 1) {
                         mListIndex++;
-                } else {
+                    } else {
                         // DONE (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
                         //The end of the list has been reached, so return to beginning index
                         mListIndex = 0;
@@ -64,7 +73,6 @@ public class BodyPartFragment extends Fragment {
                 }
 
             });
-
 
         } else {
             Log.v(TAG, "This fragment has a null list of image id's");
@@ -76,7 +84,6 @@ public class BodyPartFragment extends Fragment {
 
     // Setter methods for keeping track of the list images this fragment can display and which image
     // in the list is currently being displayed
-
     public void setImageIds(List<Integer> imageIds) {
         mImageIds = imageIds;
     }
@@ -85,5 +92,10 @@ public class BodyPartFragment extends Fragment {
         mListIndex = index;
     }
 
-    // TODO (4) Override onSaveInstanceState and save the current state of this fragment
+    // DONE (4) Override onSaveInstanceState and save the current state of this fragment
+    @Override
+    public void onSaveInstanceState(Bundle currentState) {
+        currentState.putIntegerArrayList(IMAGE_ID_LIST, (ArrayList<Integer>) mImageIds);
+        currentState.putInt(LIST_INDEX, mListIndex);
+    }
 }
