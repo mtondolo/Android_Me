@@ -1,18 +1,18 @@
-/*
- * Copyright (C) 2017 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *  	http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+/**
+* Copyright (C) 2017 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*  	http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 package com.example.android.android_me.ui;
 
@@ -55,7 +55,7 @@ public class BodyPartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // Load the saved state (the list of images and list index) if there is one
-        if (savedInstanceState != null) {
+        if(savedInstanceState != null) {
             mImageIds = savedInstanceState.getIntegerArrayList(IMAGE_ID_LIST);
             mListIndex = savedInstanceState.getInt(LIST_INDEX);
         }
@@ -68,7 +68,7 @@ public class BodyPartFragment extends Fragment {
 
         // If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
-        if (mImageIds != null) {
+        if(mImageIds != null){
             // Set the image resource to the list item at the stored index
             imageView.setImageResource(mImageIds.get(mListIndex));
 
@@ -77,7 +77,7 @@ public class BodyPartFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     // Increment position as long as the index remains <= the size of the image ids list
-                    if (mListIndex < mImageIds.size() - 1) {
+                    if(mListIndex < mImageIds.size()-1) {
                         mListIndex++;
                     } else {
                         // The end of list has been reached, so return to beginning index
@@ -115,6 +115,7 @@ public class BodyPartFragment extends Fragment {
         currentState.putIntegerArrayList(IMAGE_ID_LIST, (ArrayList<Integer>) mImageIds);
         currentState.putInt(LIST_INDEX, mListIndex);
     }
+
 
 }
 
